@@ -1,0 +1,67 @@
+/* 1. ზომების უფრო ინტუიციური გამოთვლა (padding და border შედის width/height-ში) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. სტანდარტული margin-ის და padding-ის განულება */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. საბაზისო პარამეტრები body-სთვის */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 4. მედია ელემენტების (სურათები, ვიდეო, SVG) რესპონსიულობა */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. ფორმის ელემენტებისთვის მშობლის შრიფტის მემკვიდრეობით გადაცემა */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. ღილაკებზე მაუსის კურსორის გასწორება */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* 7. სიების (ul, ol) სტანდარტული წერტილების/ნუმერაციის მოშორება */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 8. ბმულების (a) სტანდარტული ქვედა ხაზის და ფერის მოშორება */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 9. ტექსტის გადატანის და სათაურების ბალანსის გაუმჯობესება */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
