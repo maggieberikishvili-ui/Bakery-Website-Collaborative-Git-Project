@@ -1,8 +1,45 @@
 /* variables start */
+:root{
+    /* typography */
+    --base:24px;
+    --main-heading:74px;
+    --section-heading-large:64px;
+    --section-heading-small:48px;
+    --footer-title:36px;
+
+
+    /* colors */
+    --cta:#933C24;         /*  buttons  */
+    --dark-0:#000000;       
+    --dark-100:#111111;    /* section titles. */
+    --light-0:#ffffff;
+    --light-100:#F5F5F5;    /* nav and H1. */
+    --active:#E9BD8C;    /* active navigation */
+
+    /* spacing and sizes */
+    --card-width:360px;
+    --gap:20px;
+    --radius:8px;
+}
 
 /* variables end */
 
 /* global styles start */
+.container{
+    max-width: 1120px;
+    width:90%;
+    margin-inline: auto;
+}
+
+.btn{
+    color:var(--light-100);
+    border-radius: var(--radius);
+    background-color: var(--cta);
+    font-size:var(--base);
+    text-transform: capitalize;
+    &.normal{padding:24px 38px}
+    &.small{padding: 16px 12px;}
+}
 
 /* global styles end */
 
