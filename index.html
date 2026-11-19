@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the story behind our bakery and explore our featured treats.">
     <title>Bakery Website</title>
-    <link rel="stylesheet" href="./assets/css/reset.css"> 
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -13,13 +14,53 @@
     </header>
 
     <main>
-        main content
+        <!-- About Us banner -->
+        <section class="about-us" id="about-us" aria-labelledby="about-us-title">
+            <div class="container">
+                <div class="about-us__content">
+                    <h1 class="about-us__title" id="about-us-title">About us</h1>
+                    <p class="about-us__description">Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis.</p>
+                    <a class="btn normal about-us__button" href="#featured-treats">Read More</a>
+                </div>
+            </div>
+        </section>
 
+        <!-- Featured Treats -->
+        <section class="featured-treats" id="featured-treats" aria-labelledby="featured-treats-title">
+            <div class="container">
+                <h2 class="featured-treats__title" id="featured-treats-title">Featured Treats</h2>
+
+                <div class="featured-treats__grid">
+                    <article class="treat-card">
+                        <img class="treat-card__image" src="./assets/images/puff-pastry.png" alt="Puff pastry served on a dark plate" loading="lazy">
+                        <div class="treat-card__details">
+                            <h3 class="treat-card__name">Puff Pastry</h3>
+                            <p class="treat-card__price" aria-label="8 dollars">$8</p>
+                        </div>
+                    </article>
+
+                    <article class="treat-card">
+                        <img class="treat-card__image" src="./assets/images/doughnuts.png" alt="Two doughnuts in a dark pan" loading="lazy">
+                        <div class="treat-card__details">
+                            <h3 class="treat-card__name">Doughnuts</h3>
+                            <p class="treat-card__price" aria-label="8 dollars">$8</p>
+                        </div>
+                    </article>
+
+                    <article class="treat-card">
+                        <img class="treat-card__image" src="./assets/images/brownies.png" alt="Chocolate brownies with raspberries" loading="lazy">
+                        <div class="treat-card__details">
+                            <h3 class="treat-card__name">Brownies</h3>
+                            <p class="treat-card__price" aria-label="8 dollars">$8</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         footer
     </footer>
-    
 </body>
 </html>
