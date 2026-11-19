@@ -1,48 +1,333 @@
 /* variables start */
-:root{
+:root {
     /* typography */
-    --base:24px;
-    --main-heading:74px;
-    --section-heading-large:64px;
-    --section-heading-small:48px;
-    --footer-title:36px;
-
+    --base: 24px;
+    --main-heading: 74px;
+    --section-heading-large: 64px;
+    --section-heading-small: 48px;
+    --footer-title: 36px;
 
     /* colors */
-    --cta:#933C24;         /*  buttons  */
-    --dark-0:#000000;       
-    --dark-100:#111111;    /* section titles. */
-    --light-0:#ffffff;
-    --light-100:#F5F5F5;    /* nav and H1. */
-    --active:#E9BD8C;    /* active navigation */
+    --cta: #933C24;
+    --dark-0: #000000;
+    --dark-100: #111111;
+    --light-0: #ffffff;
+    --light-100: #F5F5F5;
+    --active: #E9BD8C;
 
     /* spacing and sizes */
-    --card-width:360px;
-    --gap:20px;
-    --radius:8px;
-}
+    --card-width: 360px;
+    --gap: 20px;
+    --radius: 8px;
 
+    /* fonts */
+    --body-font: "Inter", Arial, Helvetica, sans-serif;
+    --heading-font: "Sansita Swashed", Georgia, serif;
+}
 /* variables end */
 
-/* global styles start */
-.container{
+/* local fonts used in the supplied Figma file */
+@font-face {
+    font-family: "Sansita Swashed";
+    src: url("../fonts/sanistaswashed-variable.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.otf") format("opentype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-SemiBold.otf") format("opentype");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+
+/* global styles */
+body {
+    color: var(--dark-100);
+    background-color: var(--light-0);
+    font-family: var(--body-font);
+}
+
+.container {
     max-width: 1120px;
-    width:90%;
+    width: 90%;
     margin-inline: auto;
 }
 
-.btn{
-    color:var(--light-100);
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-100);
+    border: 1px solid transparent;
     border-radius: var(--radius);
     background-color: var(--cta);
-    font-size:var(--base);
+    font-family: var(--body-font);
+    font-size: var(--base);
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
     text-transform: capitalize;
-    &.normal{padding:24px 38px}
-    &.small{padding: 16px 12px;}
+    transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
-/* global styles end */
+.btn.normal {
+    padding: 24px 38px;
+}
 
-/* media queries start */
+.btn:hover {
+    background-color: #742d1b;
+    transform: translateY(-2px);
+}
 
-/* media queries end */
+.btn:focus-visible {
+    outline: 3px solid var(--active);
+    outline-offset: 3px;
+}
+
+/* About Us banner — dimensions and typography taken from the supplied Figma frame (1280 × 454). */
+.about-us {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 1280 / 454;
+    margin-inline: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-image: url("../images/about-us-banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    container-type: inline-size;
+}
+
+.about-us > .container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0;
+}
+
+.about-us__content {
+    position: absolute;
+    left: 38.203125cqw;
+    top: 6.40625cqw;
+    width: 26.796875cqw;
+    height: 22.578125cqw;
+    margin: 0;
+}
+
+.about-us__title {
+    position: absolute;
+    top: 0;
+    left: 22.44898%;
+    width: 55.10204%;
+    margin: 0;
+    color: var(--light-100);
+    font-family: var(--heading-font);
+    font-size: 3.75cqw;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.about-us__description {
+    position: absolute;
+    top: 26.6436%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    color: #B9B9B9;
+    font-family: var(--body-font);
+    font-size: 1.875cqw;
+    font-weight: 400;
+    line-height: 1.21;
+    text-align: center;
+}
+
+.about-us .btn.normal.about-us__button {
+    position: absolute;
+    top: 78.2007%;
+    left: 21.57434%;
+    display: inline-flex;
+    width: 56.85131%;
+    height: 21.79931%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    color: var(--light-100);
+    background-color: var(--cta);
+    font-family: var(--body-font);
+    font-size: 1.875cqw;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: none;
+}
+
+/* Featured Treats — positions, card sizes, and type sizes follow the Figma frame. */
+.featured-treats {
+    padding: 130px 0 121px;
+    background-color: var(--light-0);
+}
+
+.featured-treats__title {
+    width: 464px;
+    max-width: 100%;
+    margin: 0 auto 93px;
+    color: var(--dark-100);
+    font-family: var(--heading-font);
+    font-size: var(--section-heading-large);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.featured-treats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap);
+}
+
+.treat-card {
+    min-width: 0;
+}
+
+.treat-card__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 360 / 356;
+    border-radius: var(--radius);
+    object-fit: cover;
+    object-position: center;
+}
+
+.treat-card__details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 31px;
+}
+
+.treat-card__name,
+.treat-card__price {
+    color: var(--dark-0);
+    font-family: var(--body-font);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.treat-card__price {
+    flex: 0 0 auto;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .featured-treats {
+        padding: 84px 0 96px;
+    }
+
+    .featured-treats__title {
+        margin-bottom: 42px;
+        font-size: 54px;
+    }
+
+    .featured-treats__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .treat-card__details {
+        padding: 24px;
+    }
+
+    .treat-card__name,
+    .treat-card__price {
+        font-size: 24px;
+    }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .about-us {
+        aspect-ratio: auto;
+        min-height: 360px;
+        padding: 36px 16px;
+        border-radius: 0;
+    }
+
+    .about-us > .container {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-us__content {
+        position: relative;
+        inset: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+        max-width: 343px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .about-us__title {
+        position: static;
+        width: auto;
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .about-us__description {
+        position: static;
+        width: 100%;
+        font-size: 18px;
+        line-height: 1.3;
+    }
+
+    .about-us .btn.normal.about-us__button {
+        position: static;
+        width: 195px;
+        height: 63px;
+        font-size: 24px;
+    }
+
+    .featured-treats {
+        padding: 60px 0 68px;
+    }
+
+    .featured-treats__title {
+        width: auto;
+        margin-bottom: 30px;
+        font-size: 42px;
+    }
+
+    .featured-treats__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .treat-card__details {
+        padding: 20px 12px;
+    }
+
+    .treat-card__name,
+    .treat-card__price {
+        font-size: 21px;
+    }
+}
